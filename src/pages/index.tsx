@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next"
 import Link from 'next/link'
 import { useState } from "react"
+import Head from 'next/head'
 
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
@@ -69,6 +70,9 @@ export default function Home({ names }: HomeProps) {
 
   return (
     <>
+      <Head>
+        <title>My App Names | Home</title>
+      </Head>
       <ToastContainer />
       <Container>
       <h1>My App Names</h1>

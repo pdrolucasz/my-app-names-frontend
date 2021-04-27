@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import Head from 'next/head'
 
 import { api } from "../../services/api"
 
@@ -25,6 +26,9 @@ export default function Name({ name }: NameProps) {
 
   return (
     <>
+      <Head>
+        <title>My App Names | {name}</title>
+      </Head>
       <Container>
         <div>
           <Link href="/">

@@ -48,7 +48,6 @@ export default class MyDocument extends Document {
           />
 
           <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
-          <title>My App Names</title>
         </Head>
         <body>
           <Main />
