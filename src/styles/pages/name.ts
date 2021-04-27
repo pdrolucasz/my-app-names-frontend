@@ -35,4 +35,22 @@ export const Container = styled.div`
         margin-bottom: 3rem;
         font-size: 3rem;
     }
+
+    button {
+        background: #7159c1;
+        color: #fff;
+        border: 0;
+        padding: 0.625rem 1rem;
+        margin-left: 0.3125rem;
+        margin-top: 0.9rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+        border-radius: 0.5rem;
+
+        &:hover {
+            box-shadow: 0px 5px 5px #000000cc;
+            transition: all 0.3s 0s;
+            transform: translateY(-5px);
+        }
+    }
 `

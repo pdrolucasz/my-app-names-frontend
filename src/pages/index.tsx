@@ -77,7 +77,7 @@ export default function Home({ names }: HomeProps) {
         {
           namesRepo.map(name => (
             <li key={name.id}>
-              <Link href={`/name/${name.name}`}>
+              <Link href={`/name/${name.id}`}>
                 <a>{name.name}</a>
               </Link>
             </li>
