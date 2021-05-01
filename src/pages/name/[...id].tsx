@@ -9,17 +9,18 @@ import { Container } from '../../styles/pages/name'
 
 interface NameProps {
   name: string
+  idResponse: string
 }
 
-export default function Name({ name }: NameProps) {
+export default function Name({ name, idResponse }: NameProps) {
   const router = useRouter()
 
-  function returnLink(name: string) {
-    return `https://myappnames.page.link/?link=https://www.instagram.com/?name=${name}&apn=com.myappnames&afl=https://play.google.com/store/apps/details?id%3Dcom.instagram.android%26hl%3Dpt_BR%26gl%3DUS`
+  function returnLink(id: string) {
+    return `https://myappnames.page.link/?link=${process.env.NEXT_PUBLIC_APP_URL}/name/${id}`
   }
 
   function handleShareName() {
-    const link = returnLink(name)
+    const link = returnLink(idResponse)
 
     router.push(link)
   }
@@ -54,11 +55,12 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { id } = params
 
   const response = await api.get(`/names/${id}`)
-  const { name } = response.data
+  const { name, id: idResponse } = response.data
 
   return {
     props: {
-      name
+      name,
+      idResponse
     }
   }
 }
