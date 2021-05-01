@@ -3,6 +3,11 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import Head from 'next/head'
 
+import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from 'react-toastify'
+
+import { isMobile } from 'react-device-detect'
+
 import { api } from "../../services/api"
 
 import { Container } from '../../styles/pages/name'
@@ -21,12 +26,26 @@ export default function Name({ name, idResponse }: NameProps) {
 
   function handleShareName() {
     const link = returnLink(idResponse)
+    if(isMobile) {
+      router.push(link)
+    }
 
-    router.push(link)
+    navigator.clipboard.writeText(link)
+
+    toast.success('Name coppied to clipboard!', {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   return (
     <>
+      <ToastContainer />
       <Head>
         <title>My App Names | {name}</title>
       </Head>

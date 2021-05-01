@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { useState } from "react"
 import Head from 'next/head'
 
-import 'react-toastify/dist/ReactToastify.css';
-import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from 'react-toastify'
 
 import { api } from '../services/api'
 import { Container } from '../styles/pages/home'
