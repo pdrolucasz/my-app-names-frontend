@@ -21,7 +21,7 @@ export default function Name({ name, idResponse }: NameProps) {
   const router = useRouter()
 
   function returnLink(id: string) {
-    return `https://myappnames.page.link/?link=${process.env.NEXT_PUBLIC_APP_URL}/name/${id}`
+    return `https://myappnames.page.link/?link=${process.env.NEXT_PUBLIC_APP_URL}/name/${id}&apn=com.myappnames&afl=https://play.google.com/store/apps/details?id%3Dcom.instagram.android%26hl%3Dpt_BR%26gl%3DUS`
   }
 
   function handleShareName() {
