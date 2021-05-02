@@ -28,6 +28,7 @@ export default function Name({ name, idResponse }: NameProps) {
     const link = returnLink(idResponse)
     if(isMobile) {
       router.push(link)
+      return
     }
 
     navigator.clipboard.writeText(link)
